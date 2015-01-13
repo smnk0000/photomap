@@ -1,0 +1,4 @@
+vendor
+.bundle
+.idea
+db/development.db-journal
