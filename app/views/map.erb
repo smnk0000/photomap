@@ -41,10 +41,13 @@
         }
     };
 </script>
-<% @photo_url.each do | result | %>
-    <tr>
-      <td><a href="<%= result%>"><img src="<%= result%>" alt="サンプル"></td>
-    </tr>
+<% @results.each do | result | %>
+
+      <p>
+        <a href="<%= result[:photo_url]%>"><img src="<%= result[:photo_url]%>" title="サンプル"></a>
+        <%= result[:photo_comment]%>
+      </p>
+
 <% end %>
 </body>
 </html>

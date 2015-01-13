@@ -11,11 +11,11 @@ get '/' do
     #config.client_ips = '<Comma separated list of IPs>'
   end
 
-
-  @photo_url = []
+  @results = []
   client = Instagram.client
   for media in client.media_search("34.759452599999996","135.51685999999998")
-    @photo_url << media.images.thumbnail.url
+    @results << {:photo_url => media.images.thumbnail.url,
+                 :photo_comment => media.caption.text}
   end
 
   erb :map
